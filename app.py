@@ -21,7 +21,7 @@ def home():
 @app.route("/predict", methods = ["POST"])
 def predict():
 	# specifying params as data type float
-	int_features = [float(x) for x in requet.form.values()]
+	int_features = [float(x) for x in request.form.values()]
 	final_features = [np.array(int_features)]
 	prediction = model.predict(final_features)
 	output = round(prediction[0],2)
